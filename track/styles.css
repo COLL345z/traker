@@ -1,0 +1,95 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #3498db; /* Change background to a solid color */
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 24px; /* Reduce font size for mobile */
+    margin: 0;
+    text-transform: uppercase;
+}
+
+header p {
+    font-size: 14px; /* Reduce font size for mobile */
+    font-weight: 300;
+}
+
+/* Form Styles */
+form {
+    max-width: 90%; /* Adjust max-width for better fit on mobile */
+    margin: 0 auto;
+    background-color: #fff; /* Change form background to white */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    font-size: 16px; /* Reduce font size for mobile */
+    margin-bottom: 8px; /* Reduce margin for mobile */
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px; /* Reduce margin for mobile */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: #fff;
+    font-size: 16px; /* Reduce font size for mobile */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Spending Records Styles */
+#spendingList {
+    max-width: 90%; /* Adjust max-width for better fit on mobile */
+    margin: 0 auto;
+}
+
+.spendingTable {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+
+.spendingTable th,
+.spendingTable td {
+    border: 1px solid #ccc;
+    padding: 6px; /* Reduce padding for mobile */
+    text-align: left;
+}
+
+.spendingItem .deleteButton {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 6px 10px; /* Reduce padding for mobile */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
