@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expenses</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#007bff">
+</head>
+<body>
+    <header>
+        <h1>Expenses</h1>
+        <p>View and manage your expenses here.</p>
+    </header>
+  
+    
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2>Menu</h2>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="#">Expenses</a></li>
+                <li><a href="budget.html">Budget</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <section id="expenses">
+        <!-- Dark Mode Toggle -->
+        <input type="checkbox" id="darkModeToggle">
+        <label for="darkModeToggle">Dark Mode</label>
+    
+        <!-- Theme Selection -->
+        <button onclick="applyTheme('theme-1')">Theme 1</button>
+        <button onclick="applyTheme('theme-2')">Theme 2</button>
+        
+    <form id="spendingForm">
+        <label for="name">Expense Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter expense name" required>
+        
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" placeholder="Enter amount" required>
+        
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+        
+        <label for="category">Category:</label>
+        <select id="category" name="category" required>
+            <option value="food">Food</option>
+            <option value="transport">Transport</option>
+            <option value="entertainment">Entertainment</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label for="recurring">Recurring:</label>
+        <input type="checkbox" id="recurring" name="recurring">
+
+        <button type="submit">Add Expense</button>
+    </form>
+
+    <div id="spendingList"></div>
+        <!-- Include your expenses content here -->
+        <!-- You can display a list of expenses, add/edit/delete functionality, etc. -->
+    </section>
+
+    <script src="script.js" defer></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function(error) {
+                    console.log('ServiceWorker registration failed: ', error);
+                });
+            });
+        }
+
+        window.addEventListener('beforeinstallprompt', function(event) {
+            event.preventDefault();
+            window.deferredPrompt = event;
+            showAddToHomeScreen();
+        });
+
+        function showAddToHomeScreen() {
+            console.log('Add to Home Screen prompt is available.');
+        }
+    </script>
+</body>
+</html>
